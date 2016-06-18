@@ -31,9 +31,8 @@ main(void)
 
           if (buf[0] != '\n' && (*p == '\n' || *p == '\0'))
             {
-              printf ("Valid number of %ld entered\n", x);
               push(stack, x);
-              // stack[i] = x;
+              print(stack);
             }
           else
             {
@@ -42,6 +41,7 @@ main(void)
             }
         }
     }
+  pop(stack);
   print(stack);
 
   return(0);

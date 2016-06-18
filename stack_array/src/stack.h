@@ -6,7 +6,8 @@
 #define MAX_SIZE 101
 
 void push(long int *a, long int n);
-int *pop();
+int *pop(long int *a);
 void print(long int *a);
+long int Top(long int *a);
 
 #endif

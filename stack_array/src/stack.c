@@ -4,7 +4,8 @@
 
 int top = -1;
 
-void push(long int *a, long int n)
+void 
+push(long int *a, long int n)
 {
   if (top == MAX_SIZE -1)
     {
@@ -16,7 +17,14 @@ void push(long int *a, long int n)
   a[++top] = n;
 }
 
-void print(long int *a)
+void
+pop(long int *a)
+{
+  --top;
+}
+
+void 
+print(long int *a)
 {
   int i;
 

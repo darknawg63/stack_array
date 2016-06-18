@@ -1,25 +1,48 @@
-// Stack - Array based implementation
 #include <stdio.h>
+#include <stdlib.h>
 #include "stack.h"
-#define MAX_SIZE 101
+
+/*
+ *  An example of how to use strtol() to read a number
+ *  and validate that one was entered correctly.
+ *
+ */
 
 int
 main(void)
 {
-  int A[MAX_SIZE];
-  int n;
-  int status = 1;
+  char buf[BUFSIZ];
+  char *p;
+  long int stack[MAX_SIZE];
+  long int x;
+  int i;
+  int status = 0;
 
-  while (status != 0)
+  printf ("Enter a number: ");
+
+  for ( i = 0; i < MAX_SIZE; i++)
     {
-      status = scanf("%d", &n);
+      if (status > 0)
+        break;
+
+      if (fgets(buf, sizeof(buf), stdin) != NULL)
+        {
+          x = strtol(buf, &p, 10);
+
+          if (buf[0] != '\n' && (*p == '\n' || *p == '\0'))
+            {
+              printf ("Valid number of %ld entered\n", x);
+              push(stack, x);
+              // stack[i] = x;
+            }
+          else
+            {
+              printf ("Invalid number entered\n");
+              status = 1;
+            }
+        }
     }
+  print(stack);
 
-  //printf("Enter an integer\n");
-  //scanf("%d", &n);
-  //push(A, n);
-  
-  //printf("Stack is %d\n", A[0]);
-
-  return 0;
+  return(0);
 }

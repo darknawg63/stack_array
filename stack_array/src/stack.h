@@ -3,8 +3,10 @@
 
 #include <stdio.h>
 
-void push(int *a, int n);
+#define MAX_SIZE 101
+
+void push(long int *a, long int n);
 int *pop();
-void print(int *a);
+void print(long int *a);
 
 #endif

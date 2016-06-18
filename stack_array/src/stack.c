@@ -4,7 +4,7 @@
 
 int top = -1;
 
-void push(int *a, int n)
+void push(long int *a, long int n)
 {
   if (top == MAX_SIZE -1)
     {
@@ -14,4 +14,14 @@ void push(int *a, int n)
     }
 
   a[++top] = n;
+}
+
+void print(long int *a)
+{
+  int i;
+
+  for ( i = 0; i <= top; i++)
+      printf("%ld ", a[i]);
+  printf("\n");
+
 }
